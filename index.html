@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <title>Connect The Dots Generator</title>
+    <title>बिन्दुजाल योजन</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
         <div class="panel" style="background-color: rgba(0, 0, 0, 0.1);">
         <div class="panel-heading"  style="background-color:#fff; color:#666; height: 50px; border-radius: 0 !important;">
             <h2 align="center" style="padding:0px; margin:0px;">
-            Connect The Dots Generator
+                बिन्दुजाल योजन
             <span class="pull-right panel-collapse-clickable" data-toggle="collapse" data-parent="#accordion" href="#filterPanel">
                 <i class="glyphicon glyphicon-chevron-up"></i>
             </span>
@@ -253,6 +253,17 @@
     </div>
   </body>
     <script>
+    // sanskrit array
+    let sanskritArray = ["एकम्","द्वे","त्रीणि","चत्वारि","पञ्च","षट्","सप्तअष्टनव","दश","एकादश","द्वादश","त्रयोदशचतुर्दश",
+                        "पञ्","चदश","षोडश","सप्तदश","अष्टादशनवदशविंशतिः","एकविंशतिः","द्वाविंशतिः","त्रयोविंशतिः","चतुर्विंशतिः","पञ्चविंशतिः",
+                        "षड्विंशतिः","सप्तविंशतिः","अष्टाविंशतिः","नवविंशतिः","त्रिंशत्","एकत्रिंशत्","द्वात्रिंशत्","त्रयस्त्रिंशत्","चतुस्त्रिंशत्","पञ्चत्रिंशत्",
+                        "षट्त्रिंशत्","सप्तत्रिंशत्","अष्टत्रिंशत्","नवत्रिंशत्","चत्वारिंशत्","एकचत्वारिंशत्","द्विचत्वारिंशत्","त्रिचत्वारिंशत्","चतुश्चत्वारिंशत्",
+                        "पञ्चचत्वारिंशत्","षट्चत्वारिंशत्","सप्तचत्वारिंशत्","अष्टचत्वारिंशत्","नवचत्वारिंशत्","पञ्चाशत्","एकपञ्चाशत्","द्विपञ्चाशत्","त्रिपञ्चाशत्",
+                        "चतुःपञ्चाशत्","पञ्चपञ्चाशत्","षट्पञ्चाशत्","सप्तपञ्चाशत्","अष्टपञ्चाशत्","एकोनषष्ठिः","षष्ठिः","एकषष्ठिः","द्विषष्ठिः","त्रिषष्ठिः","चतुःषष्ठिः",
+                        "पञ्चषष्ठिः","षट्षष्ठिः","सप्तषष्ठिः","अष्टषष्ठिः","एकोनसप्ततिः","सप्ततिः","एकसप्ततिः","द्विसप्ततिः","त्रिसप्ततिः","चतुःसप्ततिः","पञ्चसप्ततिः",
+                        "षट्सप्ततिः","सप्तसप्ततिः","अष्टसप्ततिः","एकोनाशीतिः","अशीतिः","एकाशीतिः","द्वशीतिः","त्र्यशीतिः","चतुरशीतिः","पञ्चाशीतिः","षडशीतिः",
+                        "सप्ताशीतिः","अष्टाशीतिः","एकोननवतिः","नवतिः","एकनवतिः","द्विनवतिः","त्रिनवतिः","चतुर्नवतिः","पञ्चनवतिः","षण्णवतिः","सप्तनवतिः",
+                        "अष्टनवतिः","एकोनशतम्","शतम्"]
     // Helper functions
     function angle(p1, p2) {
         var angle = Math.atan2(p2.y - p1.y, p2.x - p1.x);
@@ -344,7 +355,7 @@
                 label.setAttribute("fill", "black");
                 label.setAttribute("text-anchor", "middle");
                 label.setAttribute("font-size", fontSize);
-                label.textContent = labellerFunc(pathIndex, i);
+                label.textContent = sanskritArray[labellerFunc(pathIndex, i)];
                 label.setAttribute("class", "draggable temp");
                 label.setAttribute("transform", "matrix(1 0 0 1 0 0)");
                 label.setAttribute("onmousedown", "selectElement(evt)");

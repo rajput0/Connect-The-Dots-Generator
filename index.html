@@ -534,8 +534,15 @@
                 setImage(_file.target.result);
             } // END reader.onload()
         } // END test if file.type === image
+        else{
+            alert('please upload svg file');
+            //file = null;
+        }
     }
     if( window.FileReader ){
+        // if(this.files[0].type != 'svg'){
+        //     alert("please upload svg")
+        // }
         //Bind the input[type="file"] to the function runUpload()
         $('#fileUpload').on('change', function(){ runUpload( this.files[0] ); });
     }else{
@@ -546,6 +553,18 @@
         p.appendChild( msg );
         $('#userActions').el.innerHTML = '';
         $('#userActions').el.appendChild( p );
+    }
+
+    function toggleWordNumber(){
+        if(sanskritArray === sanskritWordArray){
+            sanskritArray = sanskritNumberArray;
+           // console.log("1")
+        }
+        else if(sanskritArray === sanskritNumberArray){
+            sanskritArray = sanskritWordArray;
+            //console.log("2");
+        }
+        draw();
     }
     </script>
 
@@ -560,16 +579,6 @@
         $(".panel-collapse-clickable").find('i').removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
     });
 
-    function toggleWordNumber(){
-        if(sanskritArray === sanskritWordArray){
-            sanskritArray = sanskritNumberArray;
-            console.log("1")
-        }
-        else if(sanskritArray === sanskritNumberArray){
-            sanskritArray = sanskritWordArray;
-            console.log("2");
-        }
-        draw();
-    }
+    
     </script>
 </html>

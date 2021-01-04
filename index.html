@@ -33,7 +33,7 @@
             <div class="panel-body">
             <div class="row">
                 <div class="col-md-6">
-                <b>Instructions</b>: Upload an SVG image. The first Path object in the SVG will be used to create a connect-the-dots game. Use the options to automatically set the number of dots, dot sizes, and other features. You can also manually drag points and text for fine tuning. Toggle the Path line off using the Toggle Path button when you are done.
+                <b>Instructions</b>: Upload an SVG image. The  प्रथम् मार्गं  in the SVG will be used to create a बिन्दुजाल योजन. Use the options to automatically set the number of dots, dot sizes, and other features. You can also manually drag points and text for fine tuning. Toggle the Path line off using the Toggle Path button when you are done.
                 <hr>
                 <div id="userActions">
                     <input type="file" id="fileUpload" type="button" class="btn btn-block"  style="background-color:#fff">
@@ -44,35 +44,35 @@
                 <select id = "pathNumber" style = "width: 100%;padding: 3px;" onchange = "changePath()" name = "paths"></select>
                 <br>
                 <br>
-                <button type="button" class="btn btn-block" onclick="togglePathColor()" style="background-color:#fff">Toggle Path</button>
+                <button type="button" class="btn btn-block" onclick="togglePathColor()" style="background-color:#fff">संयुतन/वियुतन मार्ग / Toggle Path</button>
                 <br>
-                <button type="button" class="btn btn-block" onclick="toggleBackgroundVisibility()" style="background-color:#fff">Toggle Background Visibility</button>
+                <button type="button" class="btn btn-block" onclick="toggleBackgroundVisibility()" style="background-color:#fff">संयुतन/वियुतन पृष्ठभूमि / Toggle Background</button>
                 <br>
-                <button type="button" class="btn btn-block" onclick="toggleLines()" style="background-color:#fff">Toggle Lines</button>
+                <button type="button" class="btn btn-block" onclick="toggleLines()" style="background-color:#fff">संयुतन/वियुतन रेखाः / Toggle Lines</button>
                 <br>
-                <button type="button" class="btn btn-block" onclick="toggleWordNumber()" style="background-color:#fff">Toggle Word/Numbers</button>
+                <button type="button" class="btn btn-block" onclick="toggleWordNumber()" style="background-color:#fff">पद/संख्या अनुवर्तनम् / Toggle Word/Numbers</button>
                 <br>
                 <label for="labeller">Function to generate dots indices:</label>
                 <textarea id="labeller" onchange="draw()">(pathIndex, i) => ((pathIndex ? String.fromCharCode(64 + pathIndex) : '') + (i + 1))</textarea>
                 <br><br>
                 </div>
                 <div class="col-md-6">
-                Number of points: <span id="numSamplesValue"></span>
+                बिन्दु संख्या / Number of points: <span id="numSamplesValue"></span>
                 <input type="range" min="1" max="300" value="50" id="numSamples" onchange="draw()">
                 <br>
-                Point size: <span id="radiusValue"></span>
+                बिन्दु मात्रा / Point size: <span id="radiusValue"></span>
                 <input type="range" min="1" max="50" value="5" id="radius" onchange="draw()">
                 <br>
-                Text font size: <span id="fontSizeValue"></span>
+                पद मात्रा / Text font size: <span id="fontSizeValue"></span>
                 <input type="range" min="0" max="50" value="10" id="fontSize" onchange="draw()">
                 <br>
-                Text offset X: <span id="offsetXValue"></span>
+                पदस्य X स्थानम् / Text offset X: <span id="offsetXValue"></span>
                 <input type="range" min="-50" max="50" value="10" id="offsetX" onchange="draw()">
                 <br>
-                Text offset Y: <span id="offsetYValue"></span>
+                पदस्य Y स्थानम् / Text offset Y: <span id="offsetYValue"></span>
                 <input type="range" min="-50" max="50" value="-8" id="offsetY" onchange="draw()">
                 <br>
-                Filter out points forming an angle above : <span id="pointAlphaValue"></span>
+                न्यूनतम् कोण / Filter out points forming an angle above : <span id="pointAlphaValue"></span>
                 <input type="range" min="1" max="100" value="20" id="pointAlpha" onchange="draw()">
                 <br>
                 <label for="customPointFilter">Alternate custom function to filter points:</label>
